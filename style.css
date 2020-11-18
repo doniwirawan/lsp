@@ -1,0 +1,77 @@
+.fa-5x {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+
+.menu .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu .card {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 20px;
+}
+
+.kotak {
+    padding: 50px;
+    min-height: 100vh;
+    border-radius: 20px;
+    border: none;
+}
+
+.box {
+    border: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    min-height: 100vh;
+    border-radius: 20px;
+}
+
+.triangle {
+    max-width: 80px;
+    margin: 0 auto;
+    display: block;
+    filter: invert(1);
+}
+
+.segitiga {
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}
+
+.lingkaran {
+    background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+}
+
+.persegi {
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+}
+
+#hasil {
+    color: blue;
+}
+
+
+@media (min-width:700px) {
+    .box {
+        margin-top: 200px;
+        padding: 50px;
+        min-height: 10vh;
+        border: 2px solid grey;
+
+    }
+
+    .kotak {
+        border: 2px solid grey;
+        min-height: 10vh;
+        margin-top: 200px;
+
+    }
+}
