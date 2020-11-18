@@ -57,7 +57,20 @@
 #hasil {
     color: blue;
 }
-
+/*div.contain-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contain-flex .kiri{
+    display: flex;
+    align-self: flex-start;
+    border:2px solid black;
+}
+.contain-flex .kanan{
+    display: flex;
+    align-self: flex-end;
+}*/
 
 @media (min-width:700px) {
     .box {
@@ -74,4 +87,9 @@
         margin-top: 100px;
 
     }
+    .contain-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 }

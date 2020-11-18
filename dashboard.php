@@ -73,9 +73,21 @@
         $perSegitiga = $countSegitiga / $count;
 
 
-        echo '<h4 class="mb-5"> Jumlah Data : ' .count($data). ' </h4>';
-        echo '<h4 class="mb-5"> Data Terkecil: ' .$min. ' </h4>';
-        echo '<h4 class="mb-5"> Data Terbesar: ' .$max. ' </h4>';
+        echo '<div class="contain-flex">';
+            echo '<div class="kiri">';
+                echo '<h4 class="mb-5"> Jumlah Data : ' .count($data). ' </h4>';
+                echo '<h4 class="mb-5"> Data Terkecil: ' .$min. ' </h4>';
+                echo '<h4 class="mb-5"> Data Terbesar: ' .$max. ' </h4>';
+            echo '</div>';
+
+            echo '<div class="kanan">';
+                echo '<h4 class="mb-5"> Persentase Lingkaran: ' .$perLingkaran * 100; '  %</h4>';
+                echo '<h4 class="mb-5"> Persentase Persegi: ' .$perPersegi * 100; '  %</h4>';
+                echo '<h4 class="mb-5"> Persentase Segitiga: ' .$perSegitiga * 100; ' %</h4>';
+            echo '</div>';
+        echo '</div>';
+
+
     }
     ?>
     </tbody>
