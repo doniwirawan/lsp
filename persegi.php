@@ -12,26 +12,22 @@
 
 <body>
     <?php
-        // untuk menghilangkan error
-        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
-        error_reporting(E_ERROR);
-
-        $lebar = '';
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $lebar = test_input($_POST['lebar']);
-            
+    // untuk menghilangkan error
+  error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+  error_reporting(E_ERROR);
+        function persegi(){
+            return  $_POST['lebar'];
+            $total = $lebar * $lebar;
+            // return $total;
         }
 
-        function test_input($data)
-        {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
 
-        $total = $lebar * $lebar;
+        if(isset($_POST['submit']))
+    {
+        persegi();
+    } 
+
+        
     ?>
     <div class="container kotak">
         <a href="index.php" class="main-menu"><i class="fas fa-arrow-left mr-2"></i>Main Menu</a>
@@ -40,9 +36,9 @@
         </h1>
         <div class="hasil">
             <h1>Hasil : </h1>
-            <h1 id="hasil"><?= $total; ?></h1>
+            <h1 id="hasil"><?= persegi(); ?></h1>
         </div>
-        <form action="" class="mt-4" method="post">
+        <form action="" class="mt-4" method="POST">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 
@@ -53,7 +49,7 @@
                 aria-describedby="basic-addon1" required id="sisi" name="lebar">
         </div>
        
-        <input type="submit" class="btn btn-outline-primary" id="button-persegi" ></input>
+        <button type="submit" class="btn btn-outline-primary" id="button-persegi" >Hitung...</button>
     </form>
     </div>
     

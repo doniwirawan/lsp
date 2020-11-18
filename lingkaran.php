@@ -12,26 +12,20 @@
 
 <body>
     <?php
-        // untuk menghilangkan error
-        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
-        error_reporting(E_ERROR);
-
-        $jari = '';
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $jari = test_input($_POST['jari']);
-            
-        }
-
-        function test_input($data)
-        {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-
+    // untuk menghilangkan error
+  error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+  error_reporting(E_ERROR);
+    function lingkaran(){
+      
+        $jari = $_POST['jari'];
         $total = 3.14 * $jari * $jari;
+        return $total; 
+    }
+    if(isset($_POST['submit']))
+    {
+        lingkaran();
+    } 
+        
     ?>
     
     <div class="container kotak">
@@ -41,7 +35,7 @@
         </h1>
         <div class="hasil">
             <h1>Hasil : </h1>
-            <h1 id="hasil"><?= $total; ?></h1>
+            <h1 id="hasil"><?= lingkaran(); ?></h1>
         </div>
         <form action="" class="mt-4" method="post">
         <div class="input-group mb-3">
