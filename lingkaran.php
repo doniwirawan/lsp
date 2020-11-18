@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
     <link rel="stylesheet" href="node_modules\@fortawesome\fontawesome-free\css\all.css">
+     <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,14 +17,41 @@
   error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
   error_reporting(E_ERROR);
     function lingkaran(){
-      
+        if($_POST['jari'] == ''){
+                echo ('tolong isi value');
+                
+            }else{
+                date_default_timezone_set("Asia/Makassar");
+
         $jari = $_POST['jari'];
         $total = 3.14 * $jari * $jari;
+
+
+        $data = file_get_contents('users.json');
+        $data = json_decode($data, true);
+        $add_arr = array(
+            'tipe_operasi' => 'luas hitung lingkaran',
+            'variable1' => $_POST['jari'],
+            // 'variable2' => null,
+            'total' => $total,
+            'waktu' => date('d-m-y H:i:s')
+
+        );
+        $data[] = $add_arr;
+
+        $data = json_encode($data);
+        file_put_contents('users.json', $data);
+ 
+        // echo $data;
         return $total; 
+        header('location: lingkaran.php');
+        }
+        
     }
     if(isset($_POST['submit']))
     {
         lingkaran();
+
     } 
         
     ?>
@@ -55,7 +83,9 @@
     <script src="node_modules\jquery\dist\jquery.js"></script>
     <script src="node_modules\@fortawesome\fontawesome-free\js\all.js"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
-    <!-- <script src="script2.js"></script> -->
+
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="script2.js"></script>
 </body>
 
 </html>

@@ -19,11 +19,35 @@
   error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
   error_reporting(E_ERROR);
     function segitiga(){
-      
+        if($_POST['alas'] == '' && $_POST['tinggi'] == ''){
+                echo ('tolong isi value');
+                
+            }else{
+                date_default_timezone_set("Asia/Makassar");
         $alas = $_POST['alas'];
         $tinggi = $_POST['tinggi'];
         $total = 0.5 * $alas * $tinggi;
+
+        $data = file_get_contents('users.json');
+        $data = json_decode($data, true);
+        $add_arr = array(
+            'tipe_operasi' => 'luas hitung segitiga',
+            'variable1' => $_POST['alas'],
+            'variable2' => $_POST['tinggi'],
+            'total' => $total,
+            'waktu' => date('d-m-y H:i:s')
+
+        );
+        $data[] = $add_arr;
+
+        $data = json_encode($data);
+        file_put_contents('users.json', $data);
+ 
+        // echo $data;
         return $total; 
+        header('location: lingkaran.php');
+            }
+        
     }
     if(isset($_POST['submit']))
     {
@@ -49,7 +73,7 @@
             </div>
             
             <input type="number" class="form-control" placeholder="Alas" aria-label="Username"
-                aria-describedby="basic-addon1" required id="alas" name="alas">
+                aria-describedby="basic-addon1"  id="alas" name="alas">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -58,7 +82,7 @@
             </div>
             
             <input type="number" class="form-control" placeholder="Tinggi" aria-label="Username"
-                aria-describedby="basic-addon1" required id="tinggi" name="tinggi">
+                aria-describedby="basic-addon1"  id="tinggi" name="tinggi">
         </div>
        
         <button type="submit" class="btn btn-outline-primary" id="button-segitiga" >Hitung...</button>
