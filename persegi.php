@@ -22,7 +22,7 @@
         </h1>
         <div class="hasil">
             <h1>Hasil : </h1>
-            <h1 id="hasil"><?= $_SESSION['persegi']; ?></h1>
+            <h1 id="hasil"><?= ($_SESSION['persegi'] == null ? 'Tolong Masukkan value' : $_SESSION['persegi'] ) ;?></h1>
         </div>
         <form action="perhitungan.php?aksi=persegi" class="mt-4" method="post">
             <div class="input-group mb-3">
