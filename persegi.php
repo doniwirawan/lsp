@@ -42,7 +42,7 @@
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-ruler-vertical mr-1"></i>Lebar</span>
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-ruler-vertical mr-1"></i>Sisi</span>
             </div>
             
             <input type="number" class="form-control" placeholder="Sisi" aria-label="Username"
