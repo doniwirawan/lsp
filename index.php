@@ -48,7 +48,7 @@
     <script src="node_modules\jquery\dist\jquery.js"></script>
     <script src="node_modules\@fortawesome\fontawesome-free\js\all.js"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>

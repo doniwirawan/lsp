@@ -61,7 +61,7 @@
     <script src="node_modules\jquery\dist\jquery.js"></script>
     <script src="node_modules\@fortawesome\fontawesome-free\js\all.js"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
-    <script src="script2.js"></script>
+    <!-- <script src="script2.js"></script> -->
 </body>
 
 </html>
