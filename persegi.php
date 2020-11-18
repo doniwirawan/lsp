@@ -16,10 +16,10 @@
         error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         error_reporting(E_ERROR);
 
-        $lebar = $hasil = "";
+        $lebar = '';
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $lebar = test_input($_POST['nama']);
+            $lebar = test_input($_POST['lebar']);
             
         }
 
@@ -42,7 +42,7 @@
             <h1>Hasil : </h1>
             <h1 id="hasil"><?= $total; ?></h1>
         </div>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="mt-4">
+        <form action="" class="mt-4" method="post">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 
@@ -64,7 +64,7 @@
     <script src="node_modules\jquery\dist\jquery.js"></script>
     <script src="node_modules\@fortawesome\fontawesome-free\js\all.js"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>

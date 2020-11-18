@@ -11,6 +11,28 @@
 </head>
 
 <body>
+    <?php
+        // untuk menghilangkan error
+        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+        error_reporting(E_ERROR);
+
+        $jari = '';
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $jari = test_input($_POST['jari']);
+            
+        }
+
+        function test_input($data)
+        {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+        $total = 3.14 * $jari * $jari;
+    ?>
     
     <div class="container kotak">
         <a href="index.php" class="main-menu"><i class="fas fa-arrow-left mr-2"></i>Main Menu</a>
@@ -19,9 +41,9 @@
         </h1>
         <div class="hasil">
             <h1>Hasil : </h1>
-            <h1 id="hasil"></h1>
+            <h1 id="hasil"><?= $total; ?></h1>
         </div>
-        <form action="" class="mt-4">
+        <form action="" class="mt-4" method="post">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 
@@ -29,10 +51,10 @@
             </div>
             
             <input type="number" class="form-control" placeholder="Jari-Jari" aria-label="Username"
-                aria-describedby="basic-addon1" required id="jari">
+                aria-describedby="basic-addon1" required id="jari" name="jari">
         </div>
        
-        <input type="submit" class="btn btn-outline-primary" id="button-lingkaran" ></input>
+        <button type="submit" class="btn btn-outline-primary" id="button-lingkaran" > Hitung...</button>
     </form>
 
 
