@@ -42,6 +42,40 @@
         <?php
         $index++;
         }
+
+        $count = 0;
+        $countLingkaran = 0;
+        $countPersegi = 0;
+        $countSegitiga = 0;
+
+        $max = PHP_INT_MIN;
+        $min = PHP_INT_MAX;
+
+        foreach($data as $row){
+            $count++;
+
+            $max = ($row->total > $max ? $row->total : $max);
+            $min = ($row->total < $min ? $row->total : $min);
+
+            if($row->tipe_operasi == 'Segitiga'){
+                $countSegitiga++;
+            }else if($row->tipe_operasi == 'Persegi'){
+                $countPersegi++;
+
+            }else if($row->tipe_operasi == 'Lingkaran'){
+                $countLingkaran++;
+
+            }
+        }
+
+        $perLingkaran = $countLingkaran / $count;
+        $perPersegi = $countPersegi / $count;
+        $perSegitiga = $countSegitiga / $count;
+
+
+        echo '<h4 class="mb-5"> Jumlah Data : ' .count($data). ' </h4>';
+        echo '<h4 class="mb-5"> Data Terkecil: ' .$min. ' </h4>';
+        echo '<h4 class="mb-5"> Data Terbesar: ' .$max. ' </h4>';
     }
     ?>
     </tbody>
